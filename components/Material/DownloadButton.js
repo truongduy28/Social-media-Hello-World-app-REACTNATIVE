@@ -35,7 +35,11 @@ const DownloadButton = ({uri}) => {
   return (
     <TouchableOpacity
       onPress={() => handleDownLoad()}
-      style={{justifyContent: 'center', alignItems: 'center', marginRight: 10}}>
+      style={{
+        justifyContent: 'center ',
+        alignItems: 'center',
+        marginRight: 10,
+      }}>
       <IconIonicons name="ios-download-outline" size={25} />
     </TouchableOpacity>
   );

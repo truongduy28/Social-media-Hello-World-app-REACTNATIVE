@@ -24,6 +24,7 @@ import {
   createStackNavigator,
 } from '@react-navigation/stack';
 import FocusMedia from './screens/FocusMedia';
+import DashboardScreen from './screens/DashboardScreen';
 
 const Stack = createStackNavigator();
 
@@ -113,6 +114,13 @@ const App = () => {
               component={FocusMedia}
               options={{
                 headerTitleAlign: 'center',
+              }}
+            />
+            <Stack.Screen
+              name="Dashboard"
+              component={DashboardScreen}
+              options={{
+                headerShown: false,
               }}
             />
           </Stack.Navigator>

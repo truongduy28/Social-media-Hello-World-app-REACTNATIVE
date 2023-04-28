@@ -36,7 +36,7 @@ const DownloadButton = ({uri}) => {
     <TouchableOpacity
       onPress={() => handleDownLoad()}
       style={{
-        justifyContent: 'center ',
+        justifyContent: 'center',
         alignItems: 'center',
         marginRight: 10,
       }}>

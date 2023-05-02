@@ -6,6 +6,8 @@ import {SafeAreaView} from 'react-native';
 import React, {useState, useEffect} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {VictoryChart, VictoryLine, VictoryAxis} from 'victory-native';
+import OverviewScreen from '../screens/OverviewScreen';
+import FeedDashboardScreen from '../screens/FeedDashboardScreen';
 
 function HomeScreen() {
   // Your home screen component
@@ -20,8 +22,8 @@ const Drawer = createDrawerNavigator();
 const AppDrawerDashboard = () => {
   return (
     <Drawer.Navigator>
-      <Drawer.Screen name="Sumary" component={HomeScreen} />
-      <Drawer.Screen name="Posts" component={ProfileScreen} />
+      <Drawer.Screen name="Overview" component={OverviewScreen} />
+      <Drawer.Screen name="Posts" component={FeedDashboardScreen} />
       <Drawer.Screen name="User" component={ProfileScreen} />
       <Drawer.Screen name="Report" component={ProfileScreen} />
       <Drawer.Screen name="Back to App" component={ProfileScreen} />

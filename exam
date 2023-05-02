@@ -1,0 +1,211 @@
+// Import React
+import React, { useState } from 'react';
+// Import required components
+import {
+    SafeAreaView,
+    StyleSheet,
+    Text,
+    View,
+    TouchableOpacity,
+    ScrollView,
+    Image,
+} from 'react-native';
+
+// Import Document Picker
+import DocumentPicker from 'react-native-document-picker';
+import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
+
+import {
+    getDownloadURL,
+    getStorage,
+    ref,
+    uploadBytes,
+    uploadBytesResumable,
+} from 'firebase/storage';
+import storage from './../helper/firebase';
+
+const Example = () => {
+    const [singleFile, setSingleFile] = useState('');
+    const submit = async () => {
+        // const storage = getStorage();
+
+        // Create the file metadata
+        /** @type {any} */
+        const metadata = {
+            contentType: 'image/jpeg',
+        };
+
+        const response = await fetch(singleFile.uri);
+        console.log(response);
+
+        // Upload file and metadata to the object 'images/mountains.jpg'
+        const storageRef = ref(storage, 'images/' + singleFile.name);
+        const uploadTask = uploadBytesResumable(
+            storageRef,
+            singleFile.uri,
+            metadata,
+        );
+
+        // Listen for state changes, errors, and completion of the upload.
+        uploadTask.on(
+            'state_changed',
+            snapshot => {
+                // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+                const progress =
+                    (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                console.log('Upload is ' + progress + '% done');
+                switch (snapshot.state) {
+                    case 'paused':
+                        console.log('Upload is paused');
+                        break;
+                    case 'running':
+                        console.log('Upload is running');
+                        break;
+                }
+            },
+            error => {
+                // A full list of error codes is available at
+                // https://firebase.google.com/docs/storage/web/handle-errors
+                switch (error.code) {
+                    case 'storage/unauthorized':
+                        // User doesn't have permission to access the object
+                        break;
+                    case 'storage/canceled':
+                        // User canceled the upload
+                        break;
+
+                    // ...
+
+                    case 'storage/unknown':
+                        // Unknown error occurred, inspect error.serverResponse
+                        break;
+                }
+            },
+            () => {
+                // Upload completed successfully, now we can get the download URL
+                getDownloadURL(uploadTask.snapshot.ref).then(downloadURL => {
+                    console.log('File available at', downloadURL);
+                });
+            },
+        );
+    };
+    const selectOneFile = async () => {
+        //Opening Document Picker for selection of one file
+        try {
+            const res = await DocumentPicker.pick({
+                type: [DocumentPicker.types.allFiles],
+                //There can me more options as well
+                // DocumentPicker.types.allFiles
+                // DocumentPicker.types.images
+                // DocumentPicker.types.plainText
+                // DocumentPicker.types.audio
+                // DocumentPicker.types.pdf
+            });
+
+            console.log(res);
+            //Printing the log realted to the file
+            // console.log('res : ' + JSON.stringify(res));
+            console.log('URI : ' + res[0].uri);
+            console.log('Type : ' + res[0].type);
+            console.log('File Name : ' + res[0].name);
+            console.log('File Size : ' + res[0].size);
+            //Setting the state to show single file attributes
+            setSingleFile(res);
+            console.log();
+            setSingleFile(res[0]);
+            console.log(singleFile);
+        } catch (err) {
+            //Handling any exception (If any)
+            if (DocumentPicker.isCancel(err)) {
+                //If user canceled the document selection
+                alert('Canceled from single doc picker');
+            } else {
+                //For Unknown Error
+                alert('Unknown Error: ' + JSON.stringify(err));
+                throw err;
+            }
+        }
+    };
+
+    return (
+        <SafeAreaView style= {{ flex: 1 }
+}>
+    <Text style={ styles.titleText }>
+        Example of File Picker in React Native
+            < /Text>
+            < View style = { styles.container } >
+                {/*To show single file attribute*/ }
+                < TouchableOpacity
+activeOpacity = { 0.5}
+style = { styles.buttonStyle }
+onPress = { selectOneFile } >
+    {/*Single file selection button*/ }
+    < Text style = {{ marginRight: 10, fontSize: 19 }}>
+        Click here to pick one file
+            < /Text>
+            < Image
+source = {{
+    uri: 'https://img.icons8.com/offices/40/000000/attach.png',
+            }}
+style = { styles.imageIconStyle }
+    />
+    </TouchableOpacity>
+{/*Showing the data of selected Single file*/ }
+<Text style={ styles.textStyle }>
+    File Names: { singleFile.name ? singleFile.name : '' }
+{ '\n' }
+Type: { singleFile.type ? singleFile.type : '' }
+{ '\n' }
+          File Size: { singleFile.size ? singleFile.size : '' }
+{ '\n' }
+URI: { singleFile.uri ? singleFile.uri : '' }
+{ '\n' }
+</Text>
+    < TouchableOpacity onPress = {() => submit()}>
+        <Text>suuuuuub < /Text>
+        < /TouchableOpacity>
+{
+    singleFile && (
+        <Image
+            source={ { uri: singleFile.uri } }
+    style = {{ width: '100%', height: '100%' }
+}
+/>
+        )}
+</View>
+    < /SafeAreaView>
+  );
+};
+
+export default Example;
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        padding: 16,
+    },
+    titleText: {
+        fontSize: 22,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        paddingVertical: 20,
+    },
+    textStyle: {
+        backgroundColor: '#fff',
+        fontSize: 15,
+        marginTop: 16,
+        color: 'black',
+    },
+    buttonStyle: {
+        alignItems: 'center',
+        flexDirection: 'row',
+        backgroundColor: '#DDDDDD',
+        padding: 5,
+    },
+    imageIconStyle: {
+        height: 20,
+        width: 20,
+        resizeMode: 'stretch',
+    },
+});

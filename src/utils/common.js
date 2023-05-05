@@ -62,6 +62,16 @@ export const formatDDMMYYY = dateString => {
   return `${day}/${month}/${year}`;
 };
 
+export const formatHHMMDDMMYYY = dateString => {
+  const date = new Date(dateString);
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear();
+  return `${hours}h:${minutes}m ${day}/${month}/${year}`;
+};
+
 // Only use ALBUM SCREENS
 export const sortImages = (images, sortParam) => {
   switch (sortParam) {
@@ -90,4 +100,27 @@ export const extractFilenameFromUrl = url => {
   const endIndex = url.indexOf('?'); // Find the index of the first occurrence of '?'
   const filename = url.substring(startIndex, endIndex); // Extract the filename using substring()
   return filename;
+};
+
+// use for  search module
+export const sortNewestJsonResult = jsonData => {
+  jsonData.sort((a, b) => {
+    let dateA, dateB;
+
+    if (a.type === 'user') {
+      dateA = new Date(a.user.createdAt);
+    } else {
+      dateA = new Date(a.post.createdAt);
+    }
+
+    if (b.type === 'user') {
+      dateB = new Date(b.user.createdAt);
+    } else {
+      dateB = new Date(b.post.createdAt);
+    }
+
+    return dateB - dateA;
+  });
+
+  return jsonData;
 };

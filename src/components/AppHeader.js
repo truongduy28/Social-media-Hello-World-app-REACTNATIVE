@@ -5,8 +5,12 @@ import IconEntypo from 'react-native-vector-icons/Entypo';
 import IconMaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import IconMaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Colors from '../constants/Colors';
+import {TouchableOpacity} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 const AppHeader = () => {
+  const navigation = useNavigation();
+
   return (
     <View
       style={{
@@ -15,6 +19,10 @@ const AppHeader = () => {
         alignItems: 'center',
         height: 60,
         padding: 10,
+        // position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
       }}>
       <View style={{flex: 1.5, paddingVertical: 5}}>
         <Image
@@ -42,7 +50,7 @@ const AppHeader = () => {
           }}>
           <IconEntypo name="plus" size={26} color={Colors.text} />
         </View>
-        <View
+        <TouchableOpacity
           style={{
             backgroundColor: Colors.gray,
             borderRadius: 50,
@@ -51,9 +59,10 @@ const AppHeader = () => {
             alignItems: 'center',
             justifyContent: 'center',
             padding: 2,
-          }}>
+          }}
+          onPress={() => navigation.navigate('Search')}>
           <IconMaterialIcons name="search" size={26} color={Colors.text} />
-        </View>
+        </TouchableOpacity>
         <View
           style={{
             backgroundColor: Colors.gray,

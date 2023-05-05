@@ -28,6 +28,7 @@ import {
 } from '@react-navigation/stack';
 import FocusMedia from './src/screens/FocusMedia';
 import DashboardScreen from './src/screens/DashboardScreen';
+import SearchScreen from './src/screens/SearchScreen';
 
 const Stack = createStackNavigator();
 
@@ -122,6 +123,13 @@ const App = () => {
             <Stack.Screen
               name="Dashboard"
               component={DashboardScreen}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="Search"
+              component={SearchScreen}
               options={{
                 headerShown: false,
               }}

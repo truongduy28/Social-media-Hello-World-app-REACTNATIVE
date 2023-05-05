@@ -9,6 +9,7 @@ import SuggestPeople from '../SuggestPeople';
 
 const FeedContainer = ({state, auth}) => {
   const {allPost, setAllPost, handleLoadMore, isLoading} = state;
+  // const {scrollY} = uiState;
 
   const scrollViewRef = useRef(null);
 
@@ -48,6 +49,7 @@ const FeedContainer = ({state, auth}) => {
         onEndReached={() => handleLoadMore()}
         onEndReachedThreshold={1}
         ListFooterComponent={() => <FeedLoader />}
+        // onScroll={e => scrollY.setValue(e.nativeEvent.contentOffset.y)}
       />
       {/* {allPost?.posts?.map(post => {
         return <Feed key={post._id} post={post} />;

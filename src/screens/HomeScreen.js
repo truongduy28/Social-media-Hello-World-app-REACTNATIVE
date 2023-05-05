@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect, useState} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, View, Animated} from 'react-native';
 import axios from 'axios';
 
 // Import components
@@ -12,6 +12,13 @@ import {useAuthentication} from '../context/authContext';
 import {SERVER_URL} from '@env';
 
 const HomeScreen = ({navigation}) => {
+  // const scrollY = new Animated.Value(0);
+  // // console.log(scrollY);
+  // const diffClamp = Animated.diffClamp(scrollY, 0, 60);
+  // const translateY = diffClamp.interpolate({
+  //   inputRange: [0, 60],
+  //   outputRange: [0, -60],
+  // });
   const [allPost, setAllPost] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const {auth} = useAuthentication();
@@ -53,8 +60,11 @@ const HomeScreen = ({navigation}) => {
   };
 
   return (
-    <View>
+    <View style={{flex: 1}}>
+      {/* <Animated.View style={{transform: [{translateY: translateY}]}}> */}
       <AppHeader />
+      {/* </Animated.View> */}
+
       {isLoading ? (
         <FeedLoader />
       ) : (
@@ -62,6 +72,7 @@ const HomeScreen = ({navigation}) => {
           <FeedContainer
             state={{allPost, setAllPost, handleLoadMore, isLoading}}
             auth={auth}
+            // uiState={{scrollY}}
           />
         )
       )}

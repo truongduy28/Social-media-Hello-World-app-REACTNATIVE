@@ -63,7 +63,7 @@ const AppHeader = () => {
           onPress={() => navigation.navigate('Search')}>
           <IconMaterialIcons name="search" size={26} color={Colors.text} />
         </TouchableOpacity>
-        <View
+        <TouchableOpacity
           style={{
             backgroundColor: Colors.gray,
             borderRadius: 50,
@@ -72,13 +72,14 @@ const AppHeader = () => {
             justifyContent: 'center',
             padding: 2,
             flexDirection: 'row',
-          }}>
+          }}
+          onPress={() => navigation.navigate('Messenger')}>
           <IconMaterialCommunityIcons
             name="facebook-messenger"
             size={26}
             color={Colors.text}
           />
-        </View>
+        </TouchableOpacity>
       </View>
     </View>
   );

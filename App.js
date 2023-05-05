@@ -29,6 +29,7 @@ import {
 import FocusMedia from './src/screens/FocusMedia';
 import DashboardScreen from './src/screens/DashboardScreen';
 import SearchScreen from './src/screens/SearchScreen';
+import MessengerScreen from './src/screens/MessengerScreen';
 
 const Stack = createStackNavigator();
 
@@ -130,6 +131,13 @@ const App = () => {
             <Stack.Screen
               name="Search"
               component={SearchScreen}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="Messenger"
+              component={MessengerScreen}
               options={{
                 headerShown: false,
               }}

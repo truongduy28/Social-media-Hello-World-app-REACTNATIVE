@@ -2202,6 +2202,14 @@
   dependencies:
     "@react-navigation/elements" "^1.3.17"
 
+"@react-navigation/material-top-tabs@^6.6.2":
+  version "6.6.2"
+  resolved "https://registry.yarnpkg.com/@react-navigation/material-top-tabs/-/material-top-tabs-6.6.2.tgz#ff68e597451a86d26421d5f516a1aa7e1fb30048"
+  integrity sha512-qq0iyMzWApeSvhxovurhk5hluAH2VYbSObTZIKt4KbVXZ0KP8ir1tRQ+IAwkMea+hCnd26glpXRVQI+YqXH0Gw==
+  dependencies:
+    color "^4.2.3"
+    warn-once "^0.1.0"
+
 "@react-navigation/native-stack@^6.9.12":
   version "6.9.12"
   resolved "https://registry.npmjs.org/@react-navigation/native-stack/-/native-stack-6.9.12.tgz"
@@ -2565,6 +2573,24 @@
   dependencies:
     "@typescript-eslint/types" "5.54.0"
     eslint-visitor-keys "^3.3.0"
+
+"@zegocloud/zego-uikit-prebuilt-live-streaming-rn@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@zegocloud/zego-uikit-prebuilt-live-streaming-rn/-/zego-uikit-prebuilt-live-streaming-rn-1.3.2.tgz#0a691259fa0c7b85776952b8c85c30a0cd240bf5"
+  integrity sha512-Gm1nycqR4oVeZzlV849Mv05qIO96Q3b2crhrR0TJJOyS9pMVNMurFCeSEwX+L4otshurgUvno7e5+hFksrucrA==
+
+"@zegocloud/zego-uikit-rn@^1.12.6":
+  version "1.12.6"
+  resolved "https://registry.yarnpkg.com/@zegocloud/zego-uikit-rn/-/zego-uikit-rn-1.12.6.tgz#176ce7dc1371a130afc584c75afba860c8627368"
+  integrity sha512-xfhuBM9dIZoGX6PqGFsHZ6xxSCGr9HykBtwdUiOnu8frV0KdRfiYCXHTHP1e7H6H+fEJXK1X91e36m+MVzKpRQ==
+  dependencies:
+    react-delegate-component "^1.0.0"
+    zego-express-engine-reactnative "^3.2.0"
+
+"@zegocloud/zego-uikit-signaling-plugin-rn@^1.3.8":
+  version "1.3.8"
+  resolved "https://registry.yarnpkg.com/@zegocloud/zego-uikit-signaling-plugin-rn/-/zego-uikit-signaling-plugin-rn-1.3.8.tgz#bdac63541e72a2336a3d0ab4448cd0c08f9ce9bf"
+  integrity sha512-7V9cAWQ4mhANbQ4tzI7Cup2YjtSv7pCM3iR+OC2XZwZ+YRqB6x6hhua1Smxyq4rIoFiGte7glBh4HwhPSRe7gg==
 
 abort-controller@^3.0.0:
   version "3.0.0"
@@ -6815,7 +6841,7 @@ prompts@^2.0.1, prompts@^2.4.0:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@*, prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
+prop-types@*, prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -6898,6 +6924,13 @@ range-parser@~1.2.1:
   version "1.2.1"
   resolved "https://registry.npmjs.org/range-parser/-/range-parser-1.2.1.tgz"
   integrity sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==
+
+react-delegate-component@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-delegate-component/-/react-delegate-component-1.0.0.tgz#c17f9e15afbea4e1d83553bf960f17c8835aaf52"
+  integrity sha512-xdpNHPoiBQF0Ob4z5EqQUEK2sBjy0ooXe9xqsLlaA19l5dUASu3mIkfXMdBmMLCSfByPa0NluEN6BUDaI5EnlQ==
+  dependencies:
+    prop-types "^15.6.0"
 
 react-devtools-core@^4.26.1:
   version "4.27.2"
@@ -7010,6 +7043,11 @@ react-native-modal@^13.0.1:
     prop-types "^15.6.2"
     react-native-animatable "1.3.3"
 
+react-native-pager-view@^6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-pager-view/-/react-native-pager-view-6.2.0.tgz#51380d93fbe47f6380dc71d613a787bf27a4ca37"
+  integrity sha512-pf9OnL/Tkr+5s4Gjmsn7xh91PtJLDa6qxYa/bmtUhd/+s4cQdWQ8DIFoOFghwZIHHHwVdWtoXkp6HtpjN+r20g==
+
 react-native-paper@^5.7.2:
   version "5.7.2"
   resolved "https://registry.yarnpkg.com/react-native-paper/-/react-native-paper-5.7.2.tgz#a9f9a6e381bbc3e05f2a3b0f7f5849f7dd29f862"
@@ -7059,6 +7097,13 @@ react-native-svg@^13.9.0:
   dependencies:
     css-select "^5.1.0"
     css-tree "^1.1.3"
+
+react-native-tab-view@^3.5.1:
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-3.5.1.tgz#2ad454afc0e186b43ea8b89053f39180d480d48b"
+  integrity sha512-qdrS5t+AEhfuKQyuCXkwHu4IVppkuTvzWWlkSZKrPaSkjjIa32xrsGxt1UW9YDdro2w4AMw5hKn1hFmg/5mvzA==
+  dependencies:
+    use-latest-callback "^0.1.5"
 
 react-native-toast-message@^2.1.6:
   version "2.1.6"
@@ -8731,3 +8776,18 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.npmjs.org/yocto-queue/-/yocto-queue-0.1.0.tgz"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
+
+zego-express-engine-reactnative@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/zego-express-engine-reactnative/-/zego-express-engine-reactnative-3.2.0.tgz#e4098a7ff0434110e9363e231d896f4bb0eec900"
+  integrity sha512-UkAw+PdFesNg2NiXZxifhG2KP67RGPE1QYj5jo8wXp3gswM5axeyIqKuqJeBxhkKdPPGei8jQ5MFmTXrVaRm5Q==
+
+zego-zim-react-native@^2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/zego-zim-react-native/-/zego-zim-react-native-2.7.1.tgz#0abc906cb25a92902745ba37e30ae14efe446109"
+  integrity sha512-9NyOZR1yBwwcOjmao21Uow83+Cq5fnTrAtPFH4n2IU5wumA5prdvtBXz6u4WkPB8aGtTXEmDNfPwm3xk/3WAdA==
+
+zego-zpns-react-native@^2.3.5:
+  version "2.3.5"
+  resolved "https://registry.yarnpkg.com/zego-zpns-react-native/-/zego-zpns-react-native-2.3.5.tgz#8069df7c0fa6f558648284cf354a01ca97adb2b4"
+  integrity sha512-pmd9fiXr4fsz1z91VfrmEZP/Gkg1gGqJLvzSmLv/ToaLHIQahvvKZ2IlXxgiLyIZcEMAqMCZTchN4nZD98vseA==

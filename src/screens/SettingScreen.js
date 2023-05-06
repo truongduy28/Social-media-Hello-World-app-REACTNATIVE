@@ -19,6 +19,13 @@ const SettingScreen = ({navigation, route}) => {
 
   const QUICK_SHORT = [
     {
+      name: 'Live Stream',
+      icon: 'ios-disc',
+      route: 'Live',
+      color: Colors.redHeart,
+      role: 'all',
+    },
+    {
       name: 'Saved',
       icon: 'md-bookmark',
       route: 'Stored-post',

@@ -7070,6 +7070,11 @@ react-native-reanimated@2.14.4:
     setimmediate "^1.0.5"
     string-hash-64 "^1.0.3"
 
+react-native-responsive-table@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/react-native-responsive-table/-/react-native-responsive-table-1.0.4.tgz#d3ba5573112ed739a28a2170261576c9f9362b4b"
+  integrity sha512-VIUXnlYwMdU5dcFNzVZaPxmlgD8c3rp9JoOexgMsKrigPcK6msSYPtLHeIKLtZQaX9rnIYJBjc0bIAEXp6KTWg==
+
 react-native-safe-area-context@^4.5.0:
   version "4.5.0"
   resolved "https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-4.5.0.tgz"

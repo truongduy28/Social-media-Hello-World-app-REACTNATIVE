@@ -31,6 +31,8 @@ import DashboardScreen from './src/screens/DashboardScreen';
 import SearchScreen from './src/screens/SearchScreen';
 import MessengerScreen from './src/screens/MessengerScreen';
 import LiveScreen from './src/screens/LiveScreen';
+import HostLiveScreen from './src/screens/HostLiveScreen';
+import WatchLiveScreen from './src/screens/WatchLiveScreen';
 
 const Stack = createStackNavigator();
 
@@ -42,6 +44,7 @@ const App = () => {
         <NavigationContainer>
           {/* <Stack.Navigator initialRouteName={isLoaagedIn ? 'Main' : 'Login'}> */}
           <Stack.Navigator
+            // initialRouteName="Host-live"
             initialRouteName="Walkthrough"
             screenOptions={{
               gestureEnabled: true,
@@ -146,6 +149,20 @@ const App = () => {
             <Stack.Screen
               name="Live"
               component={LiveScreen}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="Host-live"
+              component={HostLiveScreen}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="Watch-live"
+              component={WatchLiveScreen}
               options={{
                 headerShown: false,
               }}

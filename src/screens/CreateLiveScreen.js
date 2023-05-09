@@ -13,8 +13,9 @@ import LottieView from 'lottie-react-native';
 import {showToast} from './../utils/toastShow';
 import {SERVER_URL, ZEROCLOUD_APPSIGN} from '@env';
 import axios from 'axios';
+import {useNavigation} from '@react-navigation/native';
 
-console.log(ZEROCLOUD_APPSIGN);
+// console.log(ZEROCLOUD_APPSIGN);
 
 const CreateLiveScreen = () => {
   const {auth} = useAuthentication();
@@ -23,16 +24,30 @@ const CreateLiveScreen = () => {
     streamedBy: auth.userId,
   });
 
+  const navigation = useNavigation();
+
   const handleCreateLive = async () => {
     if (!data.content) {
       showToast('error', 'Oops!', 'Description is required!!!');
       return;
     }
     try {
-      const {data} = await axios.post(
+      const res = await axios.post(
         SERVER_URL + '/live-stream/create-live',
         data,
       );
+      console.log(res.data);
+      if (res.status === 201) {
+        console.log(res.data);
+        navigation.navigate('Host-live', {
+          userID: res.data.streamedBy._id,
+          userName: res.data.streamedBy.name,
+          liveID: res.data.roomId.toString(),
+          liveInfo: {
+            _id: res.data._id,
+          },
+        });
+      }
     } catch (error) {
       console.log(error);
     }

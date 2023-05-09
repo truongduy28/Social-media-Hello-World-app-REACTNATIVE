@@ -33,6 +33,7 @@ import MessengerScreen from './src/screens/MessengerScreen';
 import LiveScreen from './src/screens/LiveScreen';
 import HostLiveScreen from './src/screens/HostLiveScreen';
 import WatchLiveScreen from './src/screens/WatchLiveScreen';
+import FeedScreen from './src/screens/FeedScreen';
 
 const Stack = createStackNavigator();
 
@@ -165,6 +166,13 @@ const App = () => {
               component={WatchLiveScreen}
               options={{
                 headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="Feed"
+              component={FeedScreen}
+              options={{
+                headerTitleAlign: 'center',
               }}
             />
           </Stack.Navigator>

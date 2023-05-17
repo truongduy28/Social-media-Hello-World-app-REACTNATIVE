@@ -1,51 +1,41 @@
-import {View, Text} from 'react-native';
-import React, {useEffect} from 'react';
-
-// import Library
+import React from 'react';
 import Toast from 'react-native-toast-message';
-import {
-  AuthenticationProvider,
-  useAuthentication,
-} from './src/context/authContext';
+import {AuthenticationProvider} from './src/context/authContext';
 import {NavigationContainer} from '@react-navigation/native';
 import 'react-native-gesture-handler';
-
-// import Screens
-import LoginScreen from './src/screens/LoginScreen';
-import RegisterScreen from './src/screens/RegisterScreen';
-import ProfileScreen from './src/screens/ProfileScreen';
-import Main from './src/screens/Main';
-import Examples from './src/screens/B';
-import WalkthroughScreen from './src/screens/WalkthroughScreen';
-import PolicyScreen from './src/screens/PolicyScreen';
-import StoredPostScreen from './src/screens/StoredPostScreen';
-import WeatherScreen from './src/screens/WeatherScreen';
-import AlbumScreen from './src/screens/AlbumScreen';
-import ReportScreen from './src/screens/ReportScreen';
 import {
   CardStyleInterpolators,
   createStackNavigator,
 } from '@react-navigation/stack';
-import FocusMedia from './src/screens/FocusMedia';
-import DashboardScreen from './src/screens/DashboardScreen';
-import SearchScreen from './src/screens/SearchScreen';
-import MessengerScreen from './src/screens/MessengerScreen';
-import LiveScreen from './src/screens/LiveScreen';
-import HostLiveScreen from './src/screens/HostLiveScreen';
-import WatchLiveScreen from './src/screens/WatchLiveScreen';
-import FeedScreen from './src/screens/FeedScreen';
+import {
+  LoginScreen,
+  RegisterScreen,
+  ProfileScreen,
+  Main,
+  LiveScreen,
+  WalkthroughScreen,
+  PolicyScreen,
+  StoredPostScreen,
+  WeatherScreen,
+  AlbumScreen,
+  ReportScreen,
+  FocusMedia,
+  DashboardScreen,
+  SearchScreen,
+  MessengerScreen,
+  HostLiveScreen,
+  WatchLiveScreen,
+  FeedScreen,
+} from './src/screens';
 
 const Stack = createStackNavigator();
 
 const App = () => {
-  // console.log(isLogedIn);
   return (
     <>
       <AuthenticationProvider>
         <NavigationContainer>
-          {/* <Stack.Navigator initialRouteName={isLoaagedIn ? 'Main' : 'Login'}> */}
           <Stack.Navigator
-            // initialRouteName="Host-live"
             initialRouteName="Walkthrough"
             screenOptions={{
               gestureEnabled: true,
@@ -56,11 +46,6 @@ const App = () => {
               name="Walkthrough"
               component={WalkthroughScreen}
               options={{headerShown: false}}
-            />
-            <Stack.Screen
-              name="B"
-              component={Examples}
-              // options={{headerShown: false}}
             />
             <Stack.Screen
               name="Main"
@@ -77,7 +62,6 @@ const App = () => {
               component={RegisterScreen}
               options={{headerShown: false}}
             />
-
             <Stack.Screen name="Profile" component={ProfileScreen} />
             <Stack.Screen
               name="Policy"
@@ -100,7 +84,6 @@ const App = () => {
               component={WeatherScreen}
               options={{
                 headerTitleAlign: 'center',
-                // title: 'Saved Items',
               }}
             />
             <Stack.Screen

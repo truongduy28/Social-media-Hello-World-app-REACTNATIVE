@@ -6,7 +6,7 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "lint": "eslint .",
-    "start": "adb reverse tcp:1800 tcp:1800 && react-native start",
+    "start": "react-native start",
     "test": "jest"
   },
   "dependencies": {

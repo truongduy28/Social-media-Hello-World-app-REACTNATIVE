@@ -1,4 +1,4 @@
-![Logo](https://github.com/truongduy28/Social-media-Hello-World-app-REACTNATIVE/blob/changed-struct-folder/assets-for-git/logo_text.png)
+![Logo](https://github.com/truongduy28/Social-media-Hello-World-app-REACTNATIVE/blob/changed-struct-folder/assets-for-git/Logo_Text.png?raw=true)
 
 # Social-media-app
 
@@ -6,11 +6,11 @@ This is an social media project of how to work with database, work with noSQL da
 
 ## Screenshots
 
-![App Screenshot](https://github.com/truongduy28/Social-media-Hello-World-app-REACTNATIVE/blob/changed-struct-folder/assets-for-git/ss1.png)
+![App Screenshot](https://github.com/truongduy28/Social-media-Hello-World-app-REACTNATIVE/blob/changed-struct-folder/assets-for-git/SS1.png?raw=true)
 
-![App Screenshot](https://github.com/truongduy28/Social-media-Hello-World-app-REACTNATIVE/blob/changed-struct-folder/assets-for-git/ss2.png)
+![App Screenshot](https://github.com/truongduy28/Social-media-Hello-World-app-REACTNATIVE/blob/changed-struct-folder/assets-for-git/SS2.png?raw=true)
 
-![App Screenshot](https://github.com/truongduy28/Social-media-Hello-World-app-REACTNATIVE/blob/changed-struct-folder/assets-for-git/ss3.png)
+![App Screenshot](https://github.com/truongduy28/Social-media-Hello-World-app-REACTNATIVE/blob/changed-struct-folder/assets-for-git/SS3.png?raw=true)
 
 ## Features
 
